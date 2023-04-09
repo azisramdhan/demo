@@ -9,4 +9,9 @@ public class FunRestController {
     public String helloWorld() {
         return "Hello World!";
     }
+
+    @GetMapping("/something")
+    public  String error() {
+        return "Hello Error Again and!";
+    }
 }

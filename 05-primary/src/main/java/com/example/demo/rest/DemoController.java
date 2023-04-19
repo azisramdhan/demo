@@ -12,10 +12,10 @@ public class DemoController {
     private Coach coach;
 
     @Autowired
-    public DemoController(@Qualifier("cricketCoach") Coach coach) {
-        System.out.println("In constructor: " + getClass().getSimpleName());
+    public void setCoach(Coach coach) {
         this.coach = coach;
     }
+
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
         return coach.getDailyWorkOut();

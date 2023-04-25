@@ -12,14 +12,6 @@ public class DemoController {
     private Coach coach;
     private Coach newCoach;
 
-    @Autowired
-    public DemoController(@Qualifier("cricketCoach") Coach coach,
-                          @Qualifier("cricketCoach") Coach newCoach) {
-        System.out.println("In constructor: " + getClass().getSimpleName());
-        this.coach = coach;
-        this.newCoach = newCoach;
-    }
-
     @GetMapping("/check")
     public String check() {
         return "Comparing beans: newCoach == coach, " + (coach == newCoach);
@@ -28,4 +20,6 @@ public class DemoController {
     public String getDailyWorkout() {
         return coach.getDailyWorkOut();
     }
+
+
 }

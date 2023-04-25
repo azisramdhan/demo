@@ -12,6 +12,10 @@ public class DemoController {
     private Coach coach;
     private Coach newCoach;
 
+    public DemoController(@Qualifier("swim") Coach coach) {
+        this.coach = coach;
+    }
+
     @GetMapping("/check")
     public String check() {
         return "Comparing beans: newCoach == coach, " + (coach == newCoach);
